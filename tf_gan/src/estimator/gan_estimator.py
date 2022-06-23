@@ -81,7 +81,7 @@ class GANEstimator(tf_estimator.Estimator):
 
   ```python
       import tensorflow as tf
-      import tensorflow_gan as tfgan
+      import tf_gan as tfgan
 
       # See TF-GAN's `train.py` for a description of the generator and
       # discriminator API.

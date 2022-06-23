@@ -41,7 +41,7 @@ Please see README.md for details and usage.
 
 # We need to put some imports inside a function call below, and the function
 # call needs to come before the *actual* imports that populate the
-# tensorflow_gan namespace. Hence, we disable this lint check throughout
+# tf_gan namespace. Hence, we disable this lint check throughout
 # the file.
 #
 # pylint: disable=g-import-not-at-top

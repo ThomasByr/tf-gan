@@ -68,7 +68,7 @@ class TPUGANEstimator(tf_compat_v1_estimator.tpu.TPUEstimator):
 
   ```python
       import tensorflow as tf
-      import tensorflow_gan as tfgan
+      import tf_gan as tfgan
 
       # See TFGAN's `train.py` for a description of the generator and
       # discriminator API.

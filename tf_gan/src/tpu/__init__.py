@@ -37,11 +37,11 @@
 # Collapse losses into a single namespace.
 # TODO(joelshor): Figure out why including this line breaks the open source
 # build
-# from tensorflow_gan.python.tpu.cross_replica_ops import *
+# from tf_gan.python.tpu.cross_replica_ops import *
 from tf_gan.src.tpu.normalization_ops import *
 
 # Collect list of exposed symbols.
-#from tensorflow_gan.python.tpu.cross_replica_ops import __all__ as cross_replica_ops_symbols
+# from tf_gan.python.tpu.cross_replica_ops import __all__ as cross_replica_ops_symbols
 from tf_gan.src.tpu.normalization_ops import __all__ as normalization_ops_symbols
 
 __all__ = normalization_ops_symbols
