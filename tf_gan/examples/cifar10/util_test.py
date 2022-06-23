@@ -38,7 +38,7 @@ from __future__ import division
 from __future__ import print_function
 
 import tensorflow.compat.v1 as tf
-import util
+from tf_gan.examples.cifar10 import util
 
 mock = tf.test.mock
 

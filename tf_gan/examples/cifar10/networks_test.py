@@ -39,7 +39,7 @@ from __future__ import print_function
 
 import numpy as np
 import tensorflow.compat.v1 as tf
-import networks
+from tf_gan.examples.cifar10 import networks
 
 
 class NetworksTest(tf.test.TestCase):

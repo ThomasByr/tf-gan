@@ -40,7 +40,7 @@ from __future__ import print_function
 import numpy as np
 import tensorflow.compat.v1 as tf
 
-import data_provider
+from tf_gan.examples.mnist import data_provider
 
 mock = tf.test.mock
 

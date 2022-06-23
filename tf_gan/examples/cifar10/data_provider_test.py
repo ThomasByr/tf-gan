@@ -41,7 +41,7 @@ from absl.testing import parameterized
 import numpy as np
 import tensorflow.compat.v1 as tf
 
-import data_provider
+from tf_gan.examples.cifar10 import data_provider
 
 mock = tf.test.mock
 

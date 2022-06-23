@@ -44,9 +44,7 @@ import tensorflow.compat.v1 as tf
 from tensorflow.compat.v1 import estimator as tf_estimator
 import tf_gan as tfgan
 
-import data_provider
-import networks
-import util
+from tf_gan.examples.mnist import data_provider, networks, util
 
 HParams = collections.namedtuple(
     'HParams', ['batch_size', 'train_log_dir', 'max_number_of_steps', 'gan_type', 'grid_size', 'noise_dims'])

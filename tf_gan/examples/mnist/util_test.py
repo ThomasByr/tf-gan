@@ -39,7 +39,7 @@ from __future__ import print_function
 
 import numpy as np
 import tensorflow.compat.v1 as tf
-import util
+from tf_gan.examples.mnist import util
 
 mock = tf.test.mock
 

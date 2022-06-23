@@ -41,7 +41,7 @@ from absl import app
 from absl import flags
 
 import tensorflow.compat.v1 as tf
-import conditional_eval_lib
+from tf_gan.examples.mnist import conditional_eval_lib
 
 flags.DEFINE_string('checkpoint_dir', '/tmp/mnist/', 'Directory where the model was written to.')
 

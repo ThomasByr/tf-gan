@@ -39,7 +39,7 @@ from __future__ import print_function
 
 from absl.testing import parameterized
 import tensorflow.compat.v1 as tf
-import eval_lib
+from tf_gan.examples.cifar10 import eval_lib
 
 mock = tf.test.mock
 

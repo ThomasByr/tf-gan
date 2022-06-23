@@ -43,7 +43,7 @@ import tensorflow.compat.v1 as tf
 import tf_gan as tfgan
 from tf_gan.examples import evaluation_helper as evaluation
 
-import data_provider, networks, util
+from tf_gan.examples.cifar10 import data_provider, networks, util
 
 HParams = collections.namedtuple('HParams', [
     'master', 'checkpoint_dir', 'eval_dir', 'num_images_generated', 'num_inception_images',

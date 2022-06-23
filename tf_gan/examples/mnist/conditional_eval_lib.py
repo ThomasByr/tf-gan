@@ -43,9 +43,7 @@ import tensorflow.compat.v1 as tf
 import tf_gan as tfgan
 
 from tf_gan.examples import evaluation_helper as evaluation
-import data_provider
-import networks
-import util
+from tf_gan.examples.mnist import data_provider, networks, util
 
 NUM_CLASSES = 10
 

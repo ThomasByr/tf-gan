@@ -39,7 +39,7 @@ from __future__ import print_function
 
 import tensorflow.compat.v1 as tf
 
-import infogan_eval_lib
+from tf_gan.examples.mnist import infogan_eval_lib
 
 
 class MnistInfoGANEvalTest(tf.test.TestCase):

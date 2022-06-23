@@ -42,7 +42,7 @@ from absl import flags
 from absl import logging
 
 import tensorflow.compat.v1 as tf
-import train_lib
+from tf_gan.examples.mnist import train_lib
 
 flags.DEFINE_integer('batch_size', 32, 'The number of images in each batch.')
 

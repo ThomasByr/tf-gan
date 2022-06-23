@@ -39,7 +39,7 @@ from __future__ import print_function
 
 import tensorflow.compat.v1 as tf
 
-import conditional_eval_lib
+from tf_gan.examples.mnist import conditional_eval_lib
 
 
 class ConditionalEvalTest(tf.test.TestCase):

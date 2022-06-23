@@ -42,7 +42,7 @@ import tensorflow.compat.v1 as tf
 from tensorflow.compat.v1 import estimator as tf_estimator
 import tf_gan as tfgan
 
-import data_provider, networks
+from tf_gan.examples.cifar10 import data_provider, networks
 
 HParams = collections.namedtuple('HParams', [
     'batch_size',

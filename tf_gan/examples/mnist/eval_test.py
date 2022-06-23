@@ -41,7 +41,7 @@ from absl.testing import parameterized
 import numpy as np
 import tensorflow.compat.v1 as tf
 
-import eval_lib
+from tf_gan.examples.mnist import eval_lib
 
 mock = tf.test.mock
 

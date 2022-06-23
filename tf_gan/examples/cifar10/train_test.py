@@ -39,7 +39,7 @@ from __future__ import print_function
 
 import numpy as np
 import tensorflow.compat.v1 as tf
-import train_lib
+from tf_gan.examples.cifar10 import train_lib
 
 mock = tf.test.mock
 

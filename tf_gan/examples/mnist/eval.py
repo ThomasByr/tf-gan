@@ -41,7 +41,7 @@ from absl import app
 from absl import flags
 
 import tensorflow.compat.v1 as tf
-import eval_lib
+from tf_gan.examples.mnist import eval_lib
 
 FLAGS = flags.FLAGS
 
