@@ -53,7 +53,7 @@ SET PATH=C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.x\include;%PATH%
 SET PATH=C:\tools\cuda\bin;%PATH%
 ```
 
-Also make sure the [compute capability](https://docs.nvidia.com/cuda/cuda-c-programming-guide/index.html#compute-capabilities) of the GPU isn't slowing down the hole process due to the (non)atomicity of some operations. Furthermore, using GPU isn't going to be particularly helpfull with a small number of features to train (we have only 1027 features in total to train, which is a very small number). Benefits will increase as the number of features to train goes [past 4000](https://stackoverflow.com/questions/55749899/training-a-simple-model-in-tensorflow-gpu-slower-than-cpu) or so.
+Also make sure the [compute capability](https://docs.nvidia.com/cuda/cuda-c-programming-guide/index.html#compute-capabilities) of the GPU isn't slowing down the hole process due to the (non)atomicity of some operations. Furthermore, using GPU isn't going to be particularly helpfull with a small number of features to train. Benefits will increase as the number of features to train goes [past 4000](https://stackoverflow.com/questions/55749899/training-a-simple-model-in-tensorflow-gpu-slower-than-cpu) or so.
 
 ## 🧪 Testing
 
@@ -86,11 +86,27 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 To view the full history, please read the full [changelog](changelog.md). Latests changes :
 
 <details>
-    <summary>  Beta first minor release (click here to expand) </summary>
+    <summary>  Stable release 1 (click here to expand) </summary>
 
-**v0.1.0** first release
+**v1.0.0** big day
 
-- initial commit
+- am I going to ever get paid for this ?
+- 2d batch normalization with gamma and beta was broadcasted incorrectly
+- minor additions to the eval helper functions
+- add tfhub to dependencies
+- pin tensorflow-probability to version 0.8 for tf1 since that's the last version that supports tf1
+- switch from matplotlib to pillow
+- add dummy computation to trigger method lazy loading before mocking happens
+- make tf-gan default build `python3.8`
+- remove testing support for python 2.x
+
+**v1.1.0** breakthrough do not happend with legacy codes
+
+- removed partial support for `python3.8` and lower (might pin python version to `3.10` in the future)
+- removed service for python `<=3.6`
+- updated `lib_eval.py`, `data_provider.py`
+- added relativistic loss and loss test
+- reworked `networks.py`, `train_lib.py`, `utils.py`
 
 </details>
 
@@ -101,9 +117,15 @@ gantt
 
     section source Code (v0)
     v0.1.0 : 2022-06-23, 3d
+    v0.1.0 :             1d
+    v0.1.0 :             2d
+
+    section source Code (v1)
+    v1.0.0 : 2022-06-25, 2d
+    v1.1.0 :             3d
 
     section Production release
-    PyPI v0.1.0 : 2022-06-26, 0d
+    PyPI v1.1.0 : 2022-08-31, 0d
 ```
 
 ## 🐛 Bugs & TODO
