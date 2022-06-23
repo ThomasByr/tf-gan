@@ -6,6 +6,8 @@
 [![GitHub latest commit](https://badgen.net/github/last-commit/ThomasByr/tf-gan)](https://gitHub.com/ThomasByr/tf-gan/commit/)
 [![Maintenance](https://img.shields.io/badge/maintained%3F-yes-green.svg)](https://GitHub.com/ThomasByr/tf-gan/graphs/commit-activity)
 
+[![Python application](https://github.com/ThomasByr/tf-gan/actions/workflows/python-app.yml/badge.svg)](https://github.com/ThomasByr/tf-gan/actions/workflows/python-app.yml)
+[![Pylint](https://github.com/ThomasByr/tf-gan/actions/workflows/pylint.yml/badge.svg)](https://github.com/ThomasByr/tf-gan/actions/workflows/pylint.yml)
 [![GitHub version](https://badge.fury.io/gh/ThomasByr%2Ftf-gan.svg)](https://github.com/ThomasByr/tf-gan)
 [![Author](https://img.shields.io/badge/author-@ThomasByr-blue)](https://github.com/ThomasByr)
 
@@ -23,7 +25,7 @@ You first need to build and compile the source code for your system (please repl
 ```ps1
 pip uninstall tf_gan -y
 python setup.py sdist bdist_wheel
-pip install .\dist\tf_gan-x.x.x-py3-none-any.whl
+pip install .\dist\tf_gan-1.1.0-py3-none-any.whl
 ```
 
 Then import the library as follow :
@@ -134,6 +136,7 @@ gantt
 
 - deprecated packages in imported libs : to be removed in python 3.12 and pillow 10
 - tensorflow warnings about deleted checkpoint with unrestored values when not saving final run as gif or not running the "interactive" mode
+- unable to decode temp data on examples
 
 **todo** (first implementation version)
 
