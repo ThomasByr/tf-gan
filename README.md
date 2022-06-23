@@ -25,7 +25,7 @@ You first need to build and compile the source code for your system (please repl
 ```ps1
 pip uninstall tf_gan -y
 python setup.py sdist bdist_wheel
-pip install .\dist\tf_gan-1.1.0-py3-none-any.whl
+pip install .\dist\tf_gan-x.x.x-py3-none-any.whl
 ```
 
 Then import the library as follow :
@@ -70,6 +70,31 @@ Then run a batch of tests with `unittest` with :
 ```ps1
 python setup.py test
 ```
+
+In addition, you can find code examples in the [examples folder](tf_gan/examples/) :
+
+1. Add the examples directory to your PYTHONPATH environment variable with
+
+   ```bash
+   export PYTHONPATH=${TFGAN_REPO}/tf_gan/examples:${PYTHONPATH}
+   ```
+
+   Be sure to use the location where you cloned this repository.
+
+2. Add this repository to your PYTHONPATH environment variable so that it can
+   be used for `tf_gan` instead of any older libraries you might have
+   installed.
+
+   ```bash
+   export PYTHONPATH=${TFGAN_REPO}:${PYTHONPATH}
+   ```
+
+3. Then navigate to the examples folder and run the training script.
+
+   ```ps1
+   cd tf_gan/examples/
+   python ./${EXAMPLE_NAME}/train.py
+   ```
 
 ## ⚖️ License
 
