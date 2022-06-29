@@ -113,27 +113,43 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 To view the full history, please read the full [changelog](changelog.md). Latests changes :
 
 <details>
-    <summary>  Stable release 1 (click here to expand) </summary>
+    <summary>  Final Edition (click here to expand) </summary>
 
-**v1.0.0** big day
+**v2.0.x** the shorter the joke the better
 
-- am I going to ever get paid for this ?
-- 2d batch normalization with gamma and beta was broadcasted incorrectly
-- minor additions to the eval helper functions
-- add tfhub to dependencies
-- pin tensorflow-probability to version 0.8 for tf1 since that's the last version that supports tf1
-- switch from matplotlib to pillow
-- add dummy computation to trigger method lazy loading before mocking happens
-- make tf-gan default build `python3.8`
-- remove testing support for python 2.x
+- moved dev ops onto Azure so that this stays open-sourced, forever
+- remove stargan
+- rollback of `tf.estimator -> tf.compat.v1.estimator`
+- make tpu python3 compatible
+- update default value of predict_batch_size for compatibility with tpu execution
+- removed outdated comments
 
-**v1.1.0** breakthrough do not happend with legacy codes
+**v2.1.x** I am not getting paid
 
-- removed partial support for `python3.8` and lower (might pin python version to `3.10` in the future)
-- removed service for python `<=3.6`
-- updated `lib_eval.py`, `data_provider.py`
-- added relativistic loss and loss test
-- reworked `networks.py`, `train_lib.py`, `utils.py`
+- deleted version shim for `dimensional_value`
+- don't write images twice ; just write the grid
+- removed version shim for "mod"
+- don't suppose service workers has been loaded
+- removed version shim for `resize_with_crop_or_pad`
+- don't the cat
+
+**v2.2.x** I can't get enough
+
+- removed unused functions and version shim for ds.\*.
+- add support for eval under tpu
+- add support for Inception on tpu for sagan
+- fixed bug in cifar example
+- updated `tfs.load()` callers to specify `shuffle_files=True` when necessary
+
+**v2.3.x** this is it
+
+- fix max_num_steps arg
+- removed broken tests
+- add a check that the argument passed to TPUEstimatorSpec.eval_metrics is of the right type
+- fix loggin
+- make commands explicit
+- fix remaininf Estimator tests
+- Noop.
 
 </details>
 
@@ -143,16 +159,22 @@ gantt
     dateFormat YYYY-MM-DD
 
     section source Code (v0)
-    v0.1.0 : 2022-06-23, 3d
-    v0.1.0 :             1d
-    v0.1.0 :             2d
+    v0.1 : 2022-06-23, 3d
+    v0.2 :             1d
+    v0.3 :             2d
 
     section source Code (v1)
-    v1.0.0 : 2022-06-25, 2d
-    v1.1.0 :             3d
+    v1.0 : 2022-06-25, 2d
+    v1.1 :             3d
+
+    section source Code (v2)
+    v2.0 : 2022-06-27, 1d
+    v2.1 :             1d
+    v2.2 :             2d
+    v2.3 :             1d
 
     section Production release
-    PyPI v1.1.0 : 2022-08-31, 0d
+    PyPI : 2022-07-01, 0d
 ```
 
 ## 🐛 Bugs & TODO
@@ -166,3 +188,4 @@ gantt
 **todo** (first implementation version)
 
 - [ ] provide examples, a lot of them
+- [ ] push on PyPI
