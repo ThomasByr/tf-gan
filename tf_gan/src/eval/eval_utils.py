@@ -49,7 +49,6 @@ __all__ = [
 ]
 
 
-# TODO(joelshor): Make this a special case of `image_reshaper`.
 def image_grid(input_tensor, grid_shape, image_shape=(32, 32), num_channels=3):
   """Arrange a minibatch of images into a grid to form a single image.
 
@@ -137,7 +136,6 @@ def _validate_images(images):
       raise ValueError("image_reshaper only supports 1 or 3 channel images.")
 
 
-# TODO(joelshor): Move the dimension logic from Python to Tensorflow.
 def image_reshaper(images, num_cols=None):
   """A reshaped summary image.
 

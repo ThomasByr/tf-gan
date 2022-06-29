@@ -95,7 +95,6 @@ class GANModel(
   """
 
 
-# TODO(joelshor): Have this class inherit from `GANModel`.
 class InfoGANModel(
     collections.namedtuple(
         'InfoGANModel', GANModel._fields + (

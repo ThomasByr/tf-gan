@@ -94,23 +94,15 @@ class InfoGANDiscriminator(object):
 
 
 def acgan_discriminator_model(inputs, _, num_classes=10):
-  return (
-      discriminator_model(inputs, _),
-      tf.one_hot(
-          # TODO(haeusser): infer batch size from input
-          tf.random.uniform([3], maxval=num_classes, dtype=tf.int32),
-          num_classes))
+  return (discriminator_model(inputs, _),
+          tf.one_hot(tf.random.uniform([3], maxval=num_classes, dtype=tf.int32), num_classes))
 
 
 class ACGANDiscriminator(object):
 
   def __call__(self, inputs, _, num_classes=10):
-    return (
-        discriminator_model(inputs, _),
-        tf.one_hot(
-            # TODO(haeusser): infer batch size from input
-            tf.random.uniform([3], maxval=num_classes, dtype=tf.int32),
-            num_classes))
+    return (discriminator_model(inputs, _),
+            tf.one_hot(tf.random.uniform([3], maxval=num_classes, dtype=tf.int32), num_classes))
 
 
 def stargan_generator_model(inputs, _):
@@ -140,7 +132,6 @@ class StarGANDiscriminator(object):
 
 
 def get_gan_model():
-  # TODO(joelshor): Find a better way of creating a variable scope.
   with tf.compat.v1.variable_scope('generator') as gen_scope:
     pass
   with tf.compat.v1.variable_scope('discriminator') as dis_scope:
@@ -264,7 +255,6 @@ def create_callable_cyclegan_model():
 
 def get_stargan_model():
   """Similar to get_gan_model()."""
-  # TODO(joelshor): Find a better way of creating a variable scope.
   with tf.compat.v1.variable_scope('generator') as gen_scope:
     pass
   with tf.compat.v1.variable_scope('discriminator') as dis_scope:
@@ -899,7 +889,6 @@ class GANTrainOpsTest(tf.test.TestCase, parameterized.TestCase):
     # Make sure there are no training hooks populated accidentally.
     self.assertEmpty(train_ops.train_hooks)
 
-  # TODO(joelshor): Add a test to check that custom update op is run.
   @parameterized.named_parameters(
       ('gan', create_gan_model, False),
       ('gan_provideupdates', create_gan_model, True),

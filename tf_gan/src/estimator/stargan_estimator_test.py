@@ -118,7 +118,6 @@ class StarGetGANModelTest(tf.test.TestCase, parameterized.TestCase):
 
 def get_dummy_gan_model():
   """Similar to get_gan_model()."""
-  # TODO(joelshor): Find a better way of creating a variable scope.
   with tf.compat.v1.variable_scope('generator') as gen_scope:
     gen_var = tf.compat.v1.get_variable('dummy_var', initializer=0.0)
   with tf.compat.v1.variable_scope('discriminator') as dis_scope:
@@ -190,7 +189,6 @@ class GetEstimatorSpecTest(tf.test.TestCase, parameterized.TestCase):
       self.assertIsNotNone(spec.eval_metric_ops)
 
 
-# TODO(joelshor): Add pandas tf.test
 class StarGANEstimatorIntegrationTest(tf.test.TestCase):
 
   def setUp(self):

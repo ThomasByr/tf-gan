@@ -52,7 +52,6 @@ class UtilsTest(tf.test.TestCase):
     image_grid = eval_utils.python_image_grid(input_array=np.zeros([25, 32, 32, 3]), grid_shape=(5, 5))
     self.assertTupleEqual(image_grid.shape, (5 * 32, 5 * 32, 3))
 
-  # TODO(joelshor): Add more `image_reshaper` tests.
   def test_image_reshaper_image_list(self):
     images = eval_utils.image_reshaper(images=tf.unstack(tf.zeros([25, 32, 32, 3])), num_cols=2)
     images.shape.assert_is_compatible_with([1, 13 * 32, 2 * 32, 3])

@@ -246,7 +246,6 @@ class HingeWassersteinLossTest(tf.test.TestCase, absltest.TestCase, _LossesTest)
     self._d_loss_fn = tfgan.losses.wargs.wasserstein_hinge_discriminator_loss
 
 
-# TODO(joelshor): Refactor this test to use the same code as the other losses.
 class ACGANLossTest(tf.test.TestCase, absltest.TestCase):
   """Tests for acgan_loss."""
 

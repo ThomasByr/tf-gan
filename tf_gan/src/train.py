@@ -996,7 +996,6 @@ def gan_train_ops(
 
   generator_global_step = None
   if isinstance(generator_optimizer, tf.compat.v1.train.SyncReplicasOptimizer):
-    # TODO(joelshor): Figure out a way to get this work without including the
     # dummy global step in the checkpoint.
     # WARNING: Making this variable a local variable causes sync replicas to
     # hang forever.
@@ -1039,7 +1038,6 @@ def gan_train_ops(
   return namedtuples.GANTrainOps(gen_train_op, disc_train_op, global_step_inc, sync_hooks)
 
 
-# TODO(joelshor): Implement a dynamic GAN train loop, as in `Real-Time Adaptive
 # Image Compression` (https://arxiv.org/abs/1705.05823)
 class RunTrainOpsHook(tf_estimator.SessionRunHook):
   """A hook to run train ops a fixed number of times."""
@@ -1141,7 +1139,6 @@ def get_joint_train_hooks(train_steps=namedtuples.GANTrainSteps(1, 1)):
   return get_hooks
 
 
-# TODO(joelshor): This function currently returns the global step. Find a
 # good way for it to return the generator, discriminator, and final losses.
 def gan_train(train_ops,
               logdir,
@@ -1370,19 +1367,6 @@ def train_step(sess, train_op, global_step, train_step_kwargs):
       tf.compat.v1.logging.info('global step %d: loss = %.4f (%.3f sec/step)', np_global_step, total_loss,
                                 time_elapsed)
 
-  # TODO(joelshor): Figure out why we can't put this into sess.run. The
-  # issue right now is that the stop check depends on the global step. The
-  # increment of global step often happens via the train op, which used
-  # created using optimizer.apply_gradients.
-  #
-  # Since running `train_op` causes the global step to be incremented, one
-  # would expected that using a control dependency would allow the
-  # should_stop check to be run in the same session.run call:
-  #
-  #   with ops.control_dependencies([train_op]):
-  #     should_stop_op = ...
-  #
-  # However, this actually seems not to work on certain platforms.
   if 'should_stop' in train_step_kwargs:
     should_stop = sess.run(train_step_kwargs['should_stop'])
   else:

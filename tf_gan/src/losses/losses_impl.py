@@ -922,7 +922,6 @@ def _validate_args(weight_factor, gradient_ratio):
     raise ValueError('`weight_factor` and `gradient_ratio` cannot both be specified.')
 
 
-# TODO(joelshor): Add ability to pass in gradients, to avoid recomputing.
 def combine_adversarial_loss(main_loss,
                              adversarial_loss,
                              weight_factor=None,

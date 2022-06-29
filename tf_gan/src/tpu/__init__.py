@@ -35,8 +35,6 @@
 # pylint: disable=wildcard-import,g-bad-import-order,line-too-long,g-no-space-after-comment
 
 # Collapse losses into a single namespace.
-# TODO(joelshor): Figure out why including this line breaks the open source
-# build
 # from tf_gan.python.tpu.cross_replica_ops import *
 from tf_gan.src.tpu.normalization_ops import *
 

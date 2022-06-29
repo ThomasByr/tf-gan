@@ -246,7 +246,6 @@ def group_norm(inputs,
     ValueError: If reduction_axes or channels_axis are out of bounds.
     ValueError: If reduction_axes are not mutually exclusive with channels_axis.
   """
-  # TODO(shlens): Support partially defined shapes for the inputs.
   inputs = tf.convert_to_tensor(value=inputs)
 
   if inputs.shape.ndims is None:
@@ -348,7 +347,6 @@ def group_norm(inputs,
       mean, variance = tf.nn.moments(x=inputs, axes=moments_axes, keepdims=True)
 
     # Compute normalization.
-    # TODO(shlens): Fix tf.nn.batch_normalization to handle the 5-D Tensor
     # appropriately so that this operation may be faster.
     gain = tf.math.rsqrt(variance + epsilon)
     offset = -mean * gain

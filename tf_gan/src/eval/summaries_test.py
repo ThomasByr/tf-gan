@@ -54,7 +54,6 @@ def stargan_generator_model(inputs, _):
 
 
 def get_gan_model():
-  # TODO(joelshor): Find a better way of creating a variable scope.
   with tf.compat.v1.variable_scope('generator') as gen_scope:
     pass
   with tf.compat.v1.variable_scope('discriminator') as dis_scope:
@@ -74,7 +73,6 @@ def get_gan_model():
 
 def get_stargan_model():
   """Similar to get_gan_model()."""
-  # TODO(joelshor): Find a better way of creating a variable scope.
   with tf.compat.v1.variable_scope('discriminator') as dis_scope:
     pass
   with tf.compat.v1.variable_scope('generator') as gen_scope:
@@ -159,7 +157,6 @@ class SummariesTest(tf.test.TestCase):
   def test_add_regularization_loss_summaries_for_cyclegan(self):
     self._test_add_regularization_loss_summaries_impl(get_cyclegan_model, 4)
 
-  # TODO(joelshor): Add correctness test.
   def _test_add_image_comparison_summaries_impl(self, get_model_fn, expected_num_summary_ops):
     if tf.executing_eagerly():
       return

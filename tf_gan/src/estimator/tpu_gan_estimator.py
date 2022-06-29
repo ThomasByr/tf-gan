@@ -268,7 +268,6 @@ class TPUGANEstimator(tf_compat_v1_estimator.tpu.TPUEstimator):
                                          generator_inputs,
                                          num_train_models=required_train_models)
 
-      # TODO(joelshor): Switch TF-GAN over to TPU-compatible summaries, then
       # remove `add_summaries` logic below.
       is_on_tpu = _is_on_tpu(mode, use_tpu, eval_on_tpu)
       summary_types = None if is_on_tpu else add_summaries

@@ -109,7 +109,6 @@ def args_to_gan_model(loss_fn):
     A new function that takes a GANModel namedtuples and returns the same loss.
   """
   # Match arguments in `loss_fn` to elements of `namedtuple`.
-  # TODO(joelshor): Properly handle `varargs` and `keywords`.
   signature_params = inspect.signature(loss_fn).parameters
   required_args = set()
   default_args_dict = {}

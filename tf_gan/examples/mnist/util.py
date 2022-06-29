@@ -126,7 +126,6 @@ def mnist_cross_entropy(images, one_hot_labels):
   return tf.losses.softmax_cross_entropy(one_hot_labels, logits, loss_collection=None)
 
 
-# TODO(joelshor): Refactor the `eval_noise` functions to reuse code.
 def get_eval_noise_categorical(noise_samples, categorical_sample_points, continuous_sample_points,
                                unstructured_noise_dims, continuous_noise_dims):
   """Create noise showing impact of categorical noise in InfoGAN.

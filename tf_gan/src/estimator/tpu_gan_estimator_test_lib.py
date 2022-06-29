@@ -164,7 +164,6 @@ def get_dummy_gan_model(generated_data=None):
   """Returns a GANModel tuple for testing."""
   if generated_data is None:
     generated_data = tf.ones([3, 4])
-  # TODO(joelshor): Find a better way of creating a variable scope.
   with tf.compat.v1.variable_scope('generator', reuse=tf.compat.v1.AUTO_REUSE) as gen_scope:
     gen_var = tf.compat.v1.get_variable('dummy_var', initializer=0.0)
   with tf.compat.v1.variable_scope('discriminator', reuse=tf.compat.v1.AUTO_REUSE) as dis_scope:

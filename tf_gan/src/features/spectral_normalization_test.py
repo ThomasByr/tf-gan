@@ -32,8 +32,6 @@
 # ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 # POSSIBILITY OF SUCH DAMAGE.
 """Tests for tfgan.features.spectral_normalization."""
-# TODO(tfgan): Add test that spectral normalization works with distribution
-# strategies.
 
 from __future__ import absolute_import
 from __future__ import division

@@ -100,7 +100,6 @@ def compute_spectral_norm(w_tensor, power_iteration_rounds=1, training=True, nam
     # updates.
     replica_context = tf.distribute.get_replica_context()
     if replica_context is None:  # cross repica strategy.
-      # TODO(joelshor): Determine appropriate aggregation method.
       raise ValueError("spectral norm isn't supported in cross-replica "
                        "distribution strategy.")
     elif not tf.distribute.has_strategy():  # default strategy.
