@@ -4,14 +4,14 @@
 
 ## Beta first minor release
 
-**v0.1.0** first release
+**v0.1.x** first release
 
 - initial commit
 - explicitly import estimators from tensorflow as a separate import instance
 - removed extensive backward python compatibility
 - removed refere,ces tp g-no-augmented assignment in pylint directives
 
-**v0.1.1** the first patch
+**v0.2.x** the first patch
 
 - update tf imports so examples work again
 - no-op
@@ -26,7 +26,7 @@
 - update on tpu : use `tf.compat.v1` when necessary
 - fix order dependent tests
 
-**v0.1.2** this is getting serious, I guess
+**v0.3.x** this is getting serious, I guess
 
 - add regan loss function
 - update `losses_impl_test.py`
@@ -41,7 +41,7 @@
 
 ## Stable release 1
 
-**v1.0.0** big day
+**v1.0.x** big day
 
 - am I going to ever get paid for this ?
 - 2d batch normalization with gamma and beta was broadcasted incorrectly
@@ -53,10 +53,48 @@
 - make tf-gan default build `python3.8`
 - remove testing support for python 2.x
 
-**v1.1.0** breakthrough do not happend with legacy codes
+**v1.1.x** breakthrough do not happend with legacy codes
 
 - removed partial support for `python3.8` and lower (might pin python version to `3.10` in the future)
 - removed service for python `<=3.6`
 - updated `lib_eval.py`, `data_provider.py`
 - added relativistic loss and loss test
 - reworked `networks.py`, `train_lib.py`, `utils.py`
+
+## Final Edition
+
+**v2.0.x** the shorter the joke the better
+
+- moved dev ops onto Azure so that this stays open-sourced, forever
+- remove stargan
+- rollback of `tf.estimator -> tf.compat.v1.estimator`
+- make tpu python3 compatible
+- update default value of predict_batch_size for compatibility with tpu execution
+- removed outdated comments
+
+**v2.1.x** I am not getting paid
+
+- deleted version shim for `dimensional_value`
+- don't write images twice ; just write the grid
+- removed version shim for "mod"
+- don't suppose service workers has been loaded
+- removed version shim for `resize_with_crop_or_pad`
+- don't the cat
+
+**v2.2.x** I can't get enough
+
+- removed unused functions and version shim for ds.\*.
+- add support for eval under tpu
+- add support for Inception on tpu for sagan
+- fixed bug in cifar example
+- updated `tfs.load()` callers to specify `shuffle_files=True` when necessary
+
+**v2.3.x** this is it
+
+- fix max_num_steps arg
+- removed broken tests
+- add a check that the argument passed to TPUEstimatorSpec.eval_metrics is of the right type
+- fix loggin
+- make commands explicit
+- fix remaininf Estimator tests
+- Noop.
